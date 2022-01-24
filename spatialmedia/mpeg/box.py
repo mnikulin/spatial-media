@@ -51,7 +51,7 @@ def load(fh, position, end):
         print("Error, invalid size {} in {} at {}".format(size, name, position))
         return None
 
-    if (position + size) > end:
+    if (position + size) > end and name != b'\x00\x02\x00\x00':
         print("Error: Leaf box size exceeds bounds.")
         return None
 
